@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: rgb(39, 34, 34);
+        }
+        .container {
+            display: flex;
+            gap: 4px;
+        }
+        .box {
+            width: 200px;
+            height: 400px;
+            transition: 0.7s cubic-bezier(.4,-0.59,.52,1.3);
+            filter: grayscale(100%);
+            position: relative;
+        }
+        .box:hover {
+            width: 300px;
+            filter: none;
+        }
+        .container .box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"><img src="../../images/bing/BingWallpaper (1).jpg" alt=""></div>
+        <div class="box"><img src="../../images/bing/BingWallpaper (2).jpg" alt=""></div>
+        <div class="box"><img src="../../images/bing/BingWallpaper (3).jpg" alt=""></div>
+        <div class="box"><img src="../../images/bing/BingWallpaper (4).jpg" alt=""></div>
+        <div class="box"><img src="../../images/bing/BingWallpaper.jpg" alt=""></div>
+    </div>
+</body>
+</html>

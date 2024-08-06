@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            min-height: 100vh;
+
+        }
+        div:not(.container) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 255, 255);
+            padding: 5px 0;
+        }
+        .header {
+            background-color: royalblue;
+            grid-area: header;
+        }
+        .f-red {
+            background-color: red;
+            grid-area: f-red;
+        }
+        .f-yellow {
+            background-color: yellow;
+            grid-area: f-yellow;
+        }
+        .f-purple {
+            background-color: purple;
+            grid-area: f-purple;
+        }
+        .sign-up {
+            background-color: green;
+            grid-area: sign-up;
+        }
+        .content {
+            background-color: pink;
+            grid-area: content;
+        }
+        @media (max-width: 1024px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 250px 250px 250px auto;
+                grid-template-areas: 
+                "header header header"
+                "f-red f-yellow f-purple"
+                "sign-up sign-up sign-up"
+                "content content content";
+                ;
+            }
+        }
+        @media (max-width: 768px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: 250px 250px 250px 250px auto;
+                grid-template-areas: 
+                "header header"
+                "f-purple f-red"
+                "f-yellow f-yellow"
+                "sign-up sign-up"
+                "content content";
+                ;
+            }
+        }
+        @media (max-width: 425px) {
+            .container {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: 250px 250px 250px 250px 250px auto;
+                grid-template-areas: 
+                "header"
+                "content"
+                "f-purple"
+                "f-red"
+                "sign-up"
+                "f-yellow"
+                ;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="f-red">Feature Red</div>
+        <div class="f-yellow">Feature Yellow</div>
+        <div class="f-purple">Feature Purple</div>
+        <div class="sign-up">Sign Up</div>
+        <div class="content">Content</div>
+    </div>
+</body>
+</html>

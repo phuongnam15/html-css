@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        background-color: rgb(30, 31, 44);
+      }
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+
+        grid-template-rows: auto 1fr auto auto;
+        padding: 20px;
+        gap: 15px; /* trong trường hợp sử dụng subgrid thì các phần tử con trong box chũng chịu gap này :v */
+      }
+      .box {
+        display: grid;
+        grid-row: span 4 / span 4;
+        grid-template-rows: subgrid;
+
+        padding: 10px;
+        background-color: rgb(58, 57, 87);
+        border: 1px solid rgb(70, 70, 88);
+        border-radius: 20px;
+      }
+      img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <img src="../../images/bing/BingWallpaper (1).jpg" alt="" />
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p>Phung Phuong Nam</p>
+        <p>BE developer</p>
+      </div>
+      <div class="box">
+        <img src="../../images/bing/BingWallpaper (2).jpg" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur
+          necessitatibus quia optio, molestias voluptatibus architecto soluta.
+        </p>
+        <p>Phan Tien Lam</p>
+        <p>Scanner</p>
+      </div>
+      <div class="box">
+        <img src="../../images/bing/BingWallpaper (3).jpg" alt="" />
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat
+          adipisci, error eligendi tempore impedit doloribus distinctio ut
+          necessitatibus accusamus consequuntur sint temporibus quas nihil. Odio
+          ullam nihil quibusdam nulla nemo? Lorem ipsum dolor, sit amet
+          consectetur adipisicing elit. Fugiat adipisci, error eligendi tempore
+          impedit doloribus distinctio ut necessitatibus accusamus consequuntur
+          sint temporibus quas nihil. Odio ullam nihil quibusdam nulla nemo?
+        </p>
+        <p>Do Duy Hung</p>
+        <p>FE developer</p>
+      </div>
+    </div>
+  </body>
+</html>

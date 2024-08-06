@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiệu ứng tiêu đề</title>
+    <style>
+      body,
+      html {
+        height: 200%;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .container {
+        position: relative;
+        top: 50vh;
+      }
+
+      .wave-text {
+        white-space: pre;
+      }
+
+      .wave-text span {
+        display: inline-block;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .wave-text span.visible {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="wave-text" id="waveText">Lorem ipsum dolor sit amet consectetur</p>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const waveText = document.getElementById("waveText");
+        const text = waveText.textContent;
+        waveText.innerHTML = "";
+
+        for (let i = 0; i < text.length; i++) {
+          const span = document.createElement("span");
+          span.textContent = text[i];
+          waveText.appendChild(span);
+        }
+
+        const handleScroll = () => {
+          const waveTextRect = waveText.getBoundingClientRect(); //lấy thông tin vị trí của phần tử trong viewport
+          if (
+            waveTextRect.top < window.innerHeight &&
+            waveTextRect.bottom >= 0
+          ) {
+            const spans = waveText.querySelectorAll("span");
+            spans.forEach((span, index) => {
+              setTimeout(() => {
+                span.classList.add("visible");
+              }, index * 50); // Adjust the delay for smoother wave effect
+            });
+            window.removeEventListener("scroll", handleScroll); // Remove event listener after the effect is applied
+          }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call in case the element is already in view
+      });
+    </script>
+  </body>
+</html>

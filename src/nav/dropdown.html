@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: monospace;
+      }
+      /* dropdowm - 1 */
+      .navbar {
+        margin-bottom: 50px;
+        list-style: none;
+        background-color: #333;
+      }
+      .navbar li {
+        display: inline-block;
+        position: relative;
+      }
+      .navbar li:hover {
+        background-color: #555;
+      }
+      .navbar li:hover .dropdown {
+        max-height: 400px;
+        transition: max-height 0.5s linear;
+      }
+      ul li a {
+        cursor: pointer;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        padding: 15px 20px;
+      }
+      .dropdown {
+        width: 100%;
+        position: absolute;
+        background-color: #333;
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0s linear;
+      }
+      .dropdown li {
+        display: block;
+      }
+      /* dropdown - 2 */
+      .dd2-container {
+        background-color: #333;
+        color: white;
+        width: 500px;
+        padding: 10px;
+      }
+      .dd2-content {
+        max-height: 0px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      .dd2-container:hover .dd2-content  {
+        max-height: 500px;
+        transition: max-height 0.5s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="navbar">
+      <li>
+        <a href="">Front End</a>
+        <ul class="dropdown">
+          <li><a href="">React JS</a></li>
+          <li><a href="">React Native</a></li>
+          <li><a href="">Vue JS</a></li>
+          <li><a href="">Angular</a></li>
+        </ul>
+      </li>
+      <li>
+        <a onclick="toggleMenu()">Back End </a>
+        <ul class="dropdown">
+          <li><a href="">Node JS</a></li>
+          <li><a href="">Laravel</a></li>
+          <li><a href="">Next JS</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="dd2-container">
+      <h1 class="dd2-title">Content</h1>
+      <p class="dd2-content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
+        nesciunt provident voluptas ut obcaecati praesentium voluptate, ipsam
+        ipsum. Excepturi cum voluptate tenetur impedit non ea commodi
+        exercitationem aspernatur quos quae!
+      </p>
+    </div>
+  </body>
+</html>

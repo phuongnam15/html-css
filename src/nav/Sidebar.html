@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        height: 100lvh;
+        display: flex;
+        overflow: auto;
+      }
+      .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100lvh;
+        width: 20%;
+        background-color: blueviolet;
+      }
+      .content {
+        height: 100%;
+        width: 80%;
+      }
+      .content1 {
+        height: 1000px;
+        width: 100%;
+        background-color: red;
+      }
+      .content2 {
+        height: 1000px;
+        width: 100%;
+        background-color: green;
+      }
+      .content3 {
+        height: 1000px;
+        width: 100%;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar"></div>
+      <div class="content">
+        <div class="content1"></div>
+        <div class="content2"></div>
+        <div class="content3"></div>
+      </div>
+    </div>
+  </body>
+</html>

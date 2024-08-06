@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        .box {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d; 
+            /* This property allows the CHILD ELEMENTS to be transformed in 3D space */
+            animation: animate 20s linear infinite; 
+            /* background-color: white; */
+            /* transform: rotateX(-20deg) rotateY(-20deg); */
+        }
+
+        @keyframes animate {
+            0% {
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            100% {
+                transform: perspective(1000px) rotateY(360deg);
+            }
+
+        }
+
+        .box span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-origin: center;
+            /* transform-style: preserve-3d; */ /* dont know for what*/
+            border-radius: 10px;
+            /* transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px); */
+            /* transform: translateZ(calc(var(--i) * 45px)); */
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+            /* --webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004); */
+        }
+
+        .box span img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            border: 2px solid white;
+            border-radius: 18px;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span style="--i: 1"><img src="../../images/bing/BingWallpaper (1).jpg" alt=""></span>
+        <span style="--i: 2"><img src="../../images/bing/BingWallpaper (2).jpg" alt=""></span>
+        <span style="--i: 3"><img src="../../images/bing/BingWallpaper (3).jpg" alt=""></span>
+        <span style="--i: 4"><img src="../../images/bing/BingWallpaper10.jpg" alt=""></span>
+        <span style="--i: 5"><img src="../../images/bing/BingWallpaper.jpg" alt=""></span>
+        <span style="--i: 6"><img src="../../images/bing/BingWallpaper11.jpg" alt=""></span>
+        <span style="--i: 7"><img src="../../images//bing/BingWallpaper12.jpg" alt=""></span>
+        <span style="--i: 8"><img src="../../images/bing/BingWallpaper123.jpg" alt=""></span>
+    </div>
+</body>
+</html>

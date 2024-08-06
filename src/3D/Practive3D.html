@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+            background-color: rgb(43, 43, 53);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .cube {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            transform-style: preserve-3d;
+            border-radius: 5px;
+            animation: animate 10s linear infinite;
+        }
+        .side {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 5px;
+        }
+        .font.side {
+            background-color: hsl(14, 100%, 70%);
+            transform: translateZ(-100px);
+        }
+        .back.side {
+            background-color: hsl(269, 100%, 70%);
+            transform: translateZ(100px);
+        }
+        .right.side {
+            background-color: hsl(0, 100%, 70%);
+            transform: translateX(100px) rotateY(90deg);
+        }
+        .left.side {
+            background-color: hsl(168, 100%, 70%);
+            transform: translateX(-100px) rotateY(90deg);
+        }
+        .top.side {
+            background-color: hsl(117, 100%, 70%);
+            transform: translateY(-100px) rotateX(90deg);
+        }
+        .bottom.side {
+            background-color: hsl(304, 100%, 70%);
+            transform: translateY(100px) rotateX(90deg);
+        }
+
+        @keyframes animate {
+            0% { transform: rotateX(45deg) rotateY(45deg); }
+            25% { transform: rotateX(45deg) rotateY(-45deg); }
+            50% { transform: rotateX(-45deg) rotateY(-45deg); }
+            75% { transform: rotateX(-45deg) rotateY(45deg); }
+            100% { transform: rotateX(45deg) rotateY(45deg); }
+            
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cube">
+        <div class="font side"></div>
+        <div class="back side"></div>
+        <div class="right side"></div>
+        <div class="left side"></div>
+        <div class="top side"></div>
+        <div class="bottom side"></div>
+    </div>
+</body>
+</html>

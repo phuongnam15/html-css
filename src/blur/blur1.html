@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url('../../images/bing/BingWallpaper.jpg') no-repeat center center/cover;
+            position: relative;
+        }
+        .box {
+            height: 40vh;
+            width: 30%;
+            border: 1px solid #ececec61;
+            border-radius: 25px;
+            backdrop-filter: blur(5px);
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+        }
+        input {
+            outline: none;
+            padding: 3px 0 3px 5px;
+            border-radius: 10px;
+            border: 1px solid #ececec61;
+        }
+        button {
+            padding: 5px 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: #ececec61;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="">
+            <input type="text" name="username" id="username" placeholder="Enter your username">
+            <input type="password" name="password" id="password" placeholder="Enter your password">
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>
