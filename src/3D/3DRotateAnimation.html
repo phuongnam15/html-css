@@ -15,7 +15,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: black;
+            background: linear-gradient(45deg, #22bb5f, #1190c3);
         }
         .box {
             position: relative;
@@ -24,8 +24,6 @@
             transform-style: preserve-3d; 
             /* This property allows the CHILD ELEMENTS to be transformed in 3D space */
             animation: animate 20s linear infinite; 
-            /* background-color: white; */
-            /* transform: rotateX(-20deg) rotateY(-20deg); */
         }
 
         @keyframes animate {
@@ -45,14 +43,11 @@
             width: 100%;
             height: 100%;
             transform-origin: center;
-            /* transform-style: preserve-3d; */ /* dont know for what*/
             border-radius: 10px;
-            /* transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px); */
-            /* transform: translateZ(calc(var(--i) * 45px)); */
             transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
-            /* --webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0004); */
+            -webkit-box-reflect: below 2px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.267));
         }
-
+        
         .box span img {
             position: absolute;
             top: 0;
